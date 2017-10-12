@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.defaultControl">
+   <children>
+      <TabPane fx:id="tabpane" prefHeight="310.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="homeTab" text="HOME">
+               <content>
+                  <ImageView fx:id="imageSector" pickOnBounds="true" preserveRatio="true" />
+               </content>
+            </Tab>
+          <Tab fx:id="playlistTab" text="PLAYLIST">
+               <content>
+                  <TableView fx:id="playlistTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="playlistTableCol" prefWidth="359.0" text="MEDIA" />
+                      <TableColumn fx:id="playlistTableCol2" prefWidth="127.0" text="PLAY" />
+                        <TableColumn fx:id="playlistTableCol3" prefWidth="114.0" text="REMOVE" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+            <Tab fx:id="historyTab" text="HISTORY">
+               <content>
+                  <TableView fx:id="tableHistory" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="historyTableCol" prefWidth="473.0" text="RECENT MEDIAS" />
+                        <TableColumn fx:id="historyTableCol2" prefWidth="135.0" text="PLAY" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+            <Tab fx:id="onlineTab" text="ONLINE">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="13.0" layoutY="44.0" prefHeight="17.0" prefWidth="159.0" text="Media Link (Download Link) :" textFill="LIME" />
+                        <TextField fx:id="downloadLink" layoutX="179.0" layoutY="40.0" prefHeight="25.0" prefWidth="380.0" />
+                        <Button fx:id="onlineStream" layoutX="254.0" layoutY="141.0" mnemonicParsing="false" onAction="#onlineStreamAction" text="Live Stream" />
+                        <Button fx:id="downloadButton" layoutX="358.0" layoutY="141.0" mnemonicParsing="false" onAction="#downloadAction" text="Download" />
+                        <Label layoutX="14.0" layoutY="93.0" text="File Name (If Download) :" textFill="LIME">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="fileName" layoutX="179.0" layoutY="90.0" prefHeight="25.0" prefWidth="380.0" />
+                        <Label layoutX="15.0" layoutY="203.0" prefHeight="17.0" prefWidth="126.0" text="Download Progress :" textFill="LIME">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ProgressBar fx:id="downloadProgress" layoutX="145.0" layoutY="202.0" prefHeight="18.0" prefWidth="405.0" progress="0.0" />
+                        <Label fx:id="progress" layoutX="559.0" layoutY="203.0" text="0%" textFill="LIME" />
+                        <Label fx:id="dp1" layoutX="270.0" layoutY="222.0" prefHeight="17.0" prefWidth="259.0" textFill="LIME" />
+                     </children>
+                  </Pane>
+               </content></Tab>
+            <Tab fx:id="aboutTab" text="ABOUT">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="281.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextArea layoutX="225.0" prefHeight="282.0" prefWidth="380.0" text="&#10;&#10;&#10;&#10;                         THIS IS A JOINT CREATION OF&#10;&#10;                                     FAHIM AHMED &#10;                                               &amp;&#10;                           MASHFIQUR RAHMAN MIM&#10;&#10;                                DEPARTMENT OF CSE&#10;                                              BUET" />
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" text="&gt;" />
+      <Slider layoutX="58.0" layoutY="367.0" prefHeight="14.0" prefWidth="380.0" />
+      <Slider layoutX="522.0" layoutY="367.0" prefHeight="14.0" prefWidth="64.0" />
+      <Label layoutX="451.0" layoutY="365.0" text="0:00/0:00" />
+      <Button fx:id="play" layoutX="26.0" layoutY="321.0" mnemonicParsing="false" onAction="#playButtonAction" prefHeight="25.0" prefWidth="95.0" text="Play Media" />
+      <Button fx:id="updatePlaylist" layoutX="121.0" layoutY="321.0" mnemonicParsing="false" onAction="#playlistButtonAction" prefHeight="25.0" prefWidth="95.0" text="Add to Playlist" />
+      <Button fx:id="clearHistory" layoutX="216.0" layoutY="321.0" mnemonicParsing="false" onAction="#historyClearAction" prefHeight="25.0" prefWidth="95.0" text="Clear History" />
+      <Button fx:id="clearPlaylist" layoutX="311.0" layoutY="321.0" mnemonicParsing="false" onAction="#playlistClearAction" text="Clear Playlist" />
+      <Button fx:id="startPlaylist" layoutX="394.0" layoutY="321.0" mnemonicParsing="false" onAction="#RunPlaylist" text="Start Playlist" />
+   </children>
+</Pane>
